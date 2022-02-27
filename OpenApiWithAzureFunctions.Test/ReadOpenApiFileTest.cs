@@ -1,7 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Extensions;
+using Microsoft.OpenApi.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using OpenApiWithAzureFunctions.OpenApi;
@@ -91,6 +93,44 @@ definitions:
                 normaliseLineEndings(expected),
                 normaliseLineEndings(outputString)
             );
+
+        }
+
+
+
+
+        [TestMethod]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0007:Use implicit type", Justification = "Exploratory testing, value in having types be explicit.")]
+        public async Task ExploratoryAccessingValues()
+        {
+            // Arrange
+            var foo = new OpenApiHelper();
+            OpenApiDocument openApiDocument = await foo.fetchAsync(FilePath);
+
+
+            // Act/Assert Pairs
+
+
+            // Paths is a dictionary where
+            //  - keys are the resource URLs, and
+            //  - values are the operation definitions that can be performed on that resource.
+            OpenApiPaths paths = openApiDocument.Paths;
+            int count = paths.Count;
+            Assert.AreEqual(1, count);
+
+            // Keys are the resource URLs
+            List<string> keyList = new List<string>(openApiDocument.Paths.Keys);
+            Assert.AreEqual("/lookup/governor-roles", keyList[0]);
+
+
+            string key = keyList[0];
+            OpenApiPathItem actions = paths[key];
+            IDictionary<OperationType, OpenApiOperation> operations = actions.Operations;
+            List<OperationType> operationKeysList = new List<OperationType>(operations.Keys);
+            Assert.AreEqual(1, operations.Count);
+            Assert.AreEqual(OperationType.Get, operationKeysList[0]);
+
+
 
         }
 
