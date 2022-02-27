@@ -23,7 +23,7 @@ namespace OpenApiWithAzureFunctions.Test
             var analyzer = new OpenApiWithAzureFunctionsAnalyzer();
             var diagnostics = await DiagnosticAnalyzerRunner.Run(analyzer, Test);
 
-            Assert.AreEqual(0, diagnostics.Length);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0, diagnostics.Length);
         }
 
         [TestMethod]
@@ -37,9 +37,9 @@ namespace OpenApiWithAzureFunctions.Test
                 .Where(x => x.Id != "CS8019") // Ignore "Unnecessary using directive"
                 .ToArray();
 
-            Assert.AreEqual(1, actual.Length);
-            Assert.AreEqual("OpenApiWithAzureFunctions", actual.First().Id);
-            Assert.AreEqual("Type name 'TypeName' contains lowercase letters", actual.First().GetMessage());
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(1, actual.Length);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual("OpenApiWithAzureFunctions", actual.First().Id);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual("Type name 'TypeName' contains lowercase letters", actual.First().GetMessage());
 
             LocationAssert.HaveTheSpan(
                 new LinePosition(9, 10),
