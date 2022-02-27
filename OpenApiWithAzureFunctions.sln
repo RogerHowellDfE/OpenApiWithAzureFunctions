@@ -1,15 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31005.135
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiWithAzureFunctions", "OpenApiWithAzureFunctions\OpenApiWithAzureFunctions.csproj", "{1FA708B1-87F8-4244-89E4-26087BB74760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiWithAzureFunctions", "OpenApiWithAzureFunctions\OpenApiWithAzureFunctions.csproj", "{1FA708B1-87F8-4244-89E4-26087BB74760}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiWithAzureFunctions.CodeFixes", "OpenApiWithAzureFunctions.CodeFixes\OpenApiWithAzureFunctions.CodeFixes.csproj", "{42CA283D-A6CC-40B6-8B0F-8F2AAAA6AC54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiWithAzureFunctions.CodeFixes", "OpenApiWithAzureFunctions.CodeFixes\OpenApiWithAzureFunctions.CodeFixes.csproj", "{42CA283D-A6CC-40B6-8B0F-8F2AAAA6AC54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiWithAzureFunctions.Package", "OpenApiWithAzureFunctions.Package\OpenApiWithAzureFunctions.Package.csproj", "{D023A374-2A84-4D8A-A2AE-8A20CF28FE28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiWithAzureFunctions.Package", "OpenApiWithAzureFunctions.Package\OpenApiWithAzureFunctions.Package.csproj", "{D023A374-2A84-4D8A-A2AE-8A20CF28FE28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiWithAzureFunctions.Test", "OpenApiWithAzureFunctions.Test\OpenApiWithAzureFunctions.Test.csproj", "{4ECDB3FA-0F8F-4EEB-A0F1-3A19167F3B89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiWithAzureFunctions.Test", "OpenApiWithAzureFunctions.Test\OpenApiWithAzureFunctions.Test.csproj", "{4ECDB3FA-0F8F-4EEB-A0F1-3A19167F3B89}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4FD45AB0-067B-462E-AA15-2E8108703BFF} = {4FD45AB0-067B-462E-AA15-2E8108703BFF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiWithAzureFunctions.OpenApi", "OpenApiWithAzureFunctions.OpenApi\OpenApiWithAzureFunctions.OpenApi.csproj", "{4FD45AB0-067B-462E-AA15-2E8108703BFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{4ECDB3FA-0F8F-4EEB-A0F1-3A19167F3B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ECDB3FA-0F8F-4EEB-A0F1-3A19167F3B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ECDB3FA-0F8F-4EEB-A0F1-3A19167F3B89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FD45AB0-067B-462E-AA15-2E8108703BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FD45AB0-067B-462E-AA15-2E8108703BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FD45AB0-067B-462E-AA15-2E8108703BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FD45AB0-067B-462E-AA15-2E8108703BFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
