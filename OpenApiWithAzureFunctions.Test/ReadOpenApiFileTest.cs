@@ -12,7 +12,7 @@ namespace OpenApiWithAzureFunctions.Test
     [TestClass]
     public class ReadOpenApiFileTest
     {
-        private const string FilePath = @"C:\dev\repos\OpenApiWithAzureFunctions\OpenApiWithAzureFunctions.Test\TestData\Texuna_dictionary-lookups_minimal.yaml";
+        private const string FilePath = @"../../../TestData/Texuna_dictionary-lookups_minimal.yaml";
 
 
         [TestMethod]
